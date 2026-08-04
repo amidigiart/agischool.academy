@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UKBE Resonance — Live Demo</title>
+<style>
+@import url('data:text/css,');
+:root {
+  --bg: #0a0c10;
+  --surface: #12151c;
+  --border: #1e2230;
+  --text: #e2e4e9;
+  --muted: #8b8fa3;
+  --accent: #4a9eff;
+  --accent2: #22d68a;
+  --warn: #ff6b4a;
+  --glow: rgba(74,158,255,0.15);
+  --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --mono: 'Cascadia Code', 'Fira Code', 'SF Mono', monospace;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+header {
+  padding: 24px 32px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+header h1 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+header h1 span { color: var(--accent); }
+.badge {
+  font-size: .65rem;
+  font-family: var(--mono);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 3px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.badge.live { border-color: var(--accent2); color: var(--accent2); }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1px;
+  background: var(--border);
+  margin: 1px;
+}
+.panel {
+  background: var(--bg);
+  padding: 20px;
+  position: relative;
+  min-height: 280px;
+}
+.panel-label {
+  font-size: .65rem;
+  font-family: var(--mono);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 12px;
+}
+
+canvas { display: block; }
+
+#ring-canvas { width: 100%; height: 240px; }
+#order-canvas { width: 100%; height: 200px; }
+#freq-canvas { width: 100%; height: 200px; }
+#phase-canvas { width: 100%; height: 200px; }
+
+.controls {
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.control-group label {
+  font-size: .72rem;
+  font-family: var(--mono);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  white-space: nowrap;
+}
+.control-group .val {
+  font-family: var(--mono);
+  font-size: .8rem;
+  color: var(--accent);
+  min-width: 40px;
+}
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--border);
+  height: 3px;
+  border-radius: 2px;
+  width: 120px;
+  cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  cursor: pointer;
+}
+button {
+  font-family: var(--mono);
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: 6px 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all .15s;
+}
+button:hover { border-color: var(--accent); color: var(--accent); }
+button.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+.metrics {
+  display: flex;
+  gap: 32px;
+  padding: 12px 32px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.metric .label {
+  font-size: .6rem;
+  font-family: var(--mono);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.metric .value {
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.metric .value.high { color: var(--accent2); }
+.metric .value.mid { color: var(--accent); }
+.metric .value.low { color: var(--warn); }
+
+.ghost-alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,107,74,0.12);
+  border: 1px solid var(--warn);
+  color: var(--warn);
+  font-family: var(--mono);
+  font-size: .72rem;
+  padding: 8px 16px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+  z-index: 10;
+}
+.ghost-alert.visible { opacity: 1; }
+
+footer {
+  padding: 16px 32px;
+  border-top: 1px solid var(--border);
+  font-size: .65rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  text-align: center;
+  letter-spacing: .03em;
+}
+footer a { color: var(--accent); text-decoration: none; }
+
+@media (max-width: 700px) {
+  .grid { grid-template-columns: 1fr; }
+  .controls { gap: 12px; padding: 12px 16px; }
+  .metrics { gap: 16px; padding: 8px 16px; }
+  .panel { padding: 12px; min-height: 220px; }
+  header { padding: 16px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1><span>UKBE</span> Resonance Engine — Live Demo</h1>
+  <div style="display:flex;gap:8px;align-items:center">
+    <span class="badge live">demo</span>
+    <span class="badge">Kuramoto Model</span>
+    <span class="badge">N-Body Phase Coupling</span>
+  </div>
+</header>
+
+<div class="metrics" id="metrics">
+  <div class="metric">
+    <span class="label">Order Parameter r(t)</span>
+    <span class="value mid" id="m-order">0.00</span>
+  </div>
+  <div class="metric">
+    <span class="label">Phase Coherence</span>
+    <span class="value mid" id="m-coherence">0%</span>
+  </div>
+  <div class="metric">
+    <span class="label">Mean Frequency</span>
+    <span class="value" id="m-freq" style="color:var(--text)">0.00 Hz</span>
+  </div>
+  <div class="metric">
+    <span class="label">Ghost Peaks</span>
+    <span class="value" id="m-ghost" style="color:var(--muted)">0</span>
+  </div>
+  <div class="metric">
+    <span class="label">Oscillators</span>
+    <span class="value" id="m-n" style="color:var(--text)">24</span>
+  </div>
+  <div class="metric">
+    <span class="label">Coupling K</span>
+    <span class="value mid" id="m-k">1.00</span>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="panel">
+    <div class="panel-label">Phase Ring — Oscillator Positions</div>
+    <canvas id="ring-canvas"></canvas>
+  </div>
+  <div class="panel">
+    <div class="panel-label">Order Parameter r(t) — Time Series</div>
+    <canvas id="order-canvas"></canvas>
+  </div>
+  <div class="panel">
+    <div class="panel-label">Natural Frequency Distribution</div>
+    <canvas id="freq-canvas"></canvas>
+  </div>
+  <div class="panel">
+    <div class="panel-label">Phase Velocity — dθ/dt per Oscillator</div>
+    <canvas id="phase-canvas"></canvas>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="control-group">
+    <label>Coupling K</label>
+    <input type="range" id="k-slider" min="0" max="5" step="0.05" value="1.0">
+    <span class="val" id="k-val">1.00</span>
+  </div>
+  <div class="control-group">
+    <label>Oscillators</label>
+    <input type="range" id="n-slider" min="4" max="64" step="1" value="24">
+    <span class="val" id="n-val">24</span>
+  </div>
+  <div class="control-group">
+    <label>Noise σ</label>
+    <input type="range" id="noise-slider" min="0" max="2" step="0.05" value="0.2">
+    <span class="val" id="noise-val">0.20</span>
+  </div>
+  <button id="btn-reset">Reset</button>
+  <button id="btn-pause">Pause</button>
+  <button id="btn-perturb">Perturb</button>
+</div>
+
+<div class="ghost-alert" id="ghost-alert">⚠ GHOST PEAK DETECTED — Bifurcation in coupling manifold</div>
+
+<footer>
+  UKBE Resonance Demo · Visualization only — core engine IP protected under AGPL-3.0 / Commercial licence ·
+  <a href="https://agischool.academy">agischool.academy</a> · © 2026 Mihai Roșca / BRIDGRAI
+</footer>
+
+<script>
+(function(){
+  const PI2 = Math.PI * 2;
+  const dpr = window.devicePixelRatio || 1;
+
+  // State
+  let N = 24;
+  let K = 1.0;
+  let noise = 0.2;
+  let paused = false;
+  let ghostCount = 0;
+  let ghostCooldown = 0;
+
+  let thetas = [];
+  let omegas = [];
+  let orderHistory = [];
+  const histLen = 200;
+
+  function initOscillators() {
+    thetas = [];
+    omegas = [];
+    orderHistory = [];
+    for (let i = 0; i < N; i++) {
+      thetas.push(Math.random() * PI2);
+      omegas.push((Math.random() - 0.5) * 2.0 + 1.0);
+    }
+  }
+  initOscillators();
+
+  // Canvas setup
+  function setupCanvas(id) {
+    const c = document.getElementById(id);
+    const rect = c.parentElement.getBoundingClientRect();
+    const w = rect.width - 40;
+    const h = parseInt(getComputedStyle(c).height);
+    c.width = w * dpr;
+    c.height = h * dpr;
+    c.style.width = w + 'px';
+    c.style.height = h + 'px';
+    const ctx = c.getContext('2d');
+    ctx.scale(dpr, dpr);
+    return { c, ctx, w, h };
+  }
+
+  let ring, order, freq, phase;
+
+  function setupAll() {
+    ring = setupCanvas('ring-canvas');
+    order = setupCanvas('order-canvas');
+    freq = setupCanvas('freq-canvas');
+    phase = setupCanvas('phase-canvas');
+  }
+  setupAll();
+  window.addEventListener('resize', setupAll);
+
+  // Kuramoto step
+  const dt = 0.016;
+  let prevR = 0;
+  let drdtHistory = [];
+
+  function step() {
+    if (paused) return;
+    const sinSum = thetas.reduce((s, t) => s + Math.sin(t), 0) / N;
+    const cosSum = thetas.reduce((s, t) => s + Math.cos(t), 0) / N;
+    const r = Math.sqrt(sinSum * sinSum + cosSum * cosSum);
+    const psi = Math.atan2(sinSum, cosSum);
+
+    for (let i = 0; i < N; i++) {
+      const coupling = (K / N) * thetas.reduce((s, t, j) => {
+        if (j === i) return s;
+        return s + Math.sin(t - thetas[i]);
+      }, 0);
+      thetas[i] += (omegas[i] + coupling + (Math.random() - 0.5) * noise) * dt;
+      thetas[i] = ((thetas[i] % PI2) + PI2) % PI2;
+    }
+
+    orderHistory.push(r);
+    if (orderHistory.length > histLen) orderHistory.shift();
+
+    // Ghost peak detection
+    const drdt = (r - prevR) / dt;
+    drdtHistory.push(drdt);
+    if (drdtHistory.length > 30) drdtHistory.shift();
+    if (drdtHistory.length > 10) {
+      const recent = drdtHistory.slice(-10);
+      const maxDr = Math.max(...recent);
+      const minDr = Math.min(...recent);
+      if (maxDr - minDr > 3.5 && ghostCooldown <= 0) {
+        ghostCount++;
+        ghostCooldown = 120;
+        const el = document.getElementById('ghost-alert');
+        el.classList.add('visible');
+        setTimeout(() => el.classList.remove('visible'), 2000);
+      }
+    }
+    if (ghostCooldown > 0) ghostCooldown--;
+    prevR = r;
+
+    return { r, psi, sinSum, cosSum };
+  }
+
+  // Drawing
+  function drawRing(state) {
+    const { ctx, w, h } = ring;
+    ctx.clearRect(0, 0, w, h);
+    const cx = w / 2;
+    const cy = h / 2;
+    const rad = Math.min(cx, cy) - 30;
+
+    // Outer ring
+    ctx.beginPath();
+    ctx.arc(cx, cy, rad, 0, PI2);
+    ctx.strokeStyle = '#1e2230';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // Inner glow based on r
+    const r = state.r;
+    const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, rad);
+    grad.addColorStop(0, `rgba(74,158,255,${r * 0.12})`);
+    grad.addColorStop(1, 'transparent');
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.arc(cx, cy, rad, 0, PI2);
+    ctx.fill();
+
+    // Mean phase arrow
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(state.psi);
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(rad * r * 0.85, 0);
+    ctx.strokeStyle = `rgba(74,158,255,${0.3 + r * 0.7})`;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    // Arrow head
+    ctx.beginPath();
+    ctx.moveTo(rad * r * 0.85, 0);
+    ctx.lineTo(rad * r * 0.85 - 8, -4);
+    ctx.lineTo(rad * r * 0.85 - 8, 4);
+    ctx.closePath();
+    ctx.fillStyle = `rgba(74,158,255,${0.3 + r * 0.7})`;
+    ctx.fill();
+    ctx.restore();
+
+    // Oscillator dots
+    for (let i = 0; i < N; i++) {
+      const a = thetas[i];
+      const x = cx + Math.cos(a) * rad;
+      const y = cy + Math.sin(a) * rad;
+
+      // Trail
+      ctx.beginPath();
+      ctx.arc(x, y, 8, 0, PI2);
+      ctx.fillStyle = `rgba(74,158,255,0.08)`;
+      ctx.fill();
+
+      // Dot
+      ctx.beginPath();
+      ctx.arc(x, y, 3.5, 0, PI2);
+      const hue = (omegas[i] + 1) / 2;
+      ctx.fillStyle = hue > 0.6 ? '#22d68a' : hue > 0.4 ? '#4a9eff' : '#ff6b4a';
+      ctx.fill();
+    }
+
+    // Center r value
+    ctx.fillStyle = 'rgba(226,228,233,0.9)';
+    ctx.font = `600 ${Math.max(20, rad * 0.22)}px ${getComputedStyle(document.body).fontFamily}`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(r.toFixed(3), cx, cy - 8);
+    ctx.font = `500 10px ${getComputedStyle(document.body).fontFamily}`;
+    ctx.fillStyle = '#8b8fa3';
+    ctx.fillText('r(t)', cx, cy + 12);
+  }
+
+  function drawOrder() {
+    const { ctx, w, h } = order;
+    ctx.clearRect(0, 0, w, h);
+
+    if (orderHistory.length < 2) return;
+
+    // Grid
+    ctx.strokeStyle = '#1a1d27';
+    ctx.lineWidth = 1;
+    for (let y = 0; y <= 1; y += 0.25) {
+      const py = h - 20 - (h - 40) * y;
+      ctx.beginPath();
+      ctx.moveTo(40, py);
+      ctx.lineTo(w, py);
+      ctx.stroke();
+      ctx.fillStyle = '#555';
+      ctx.font = '9px monospace';
+      ctx.textAlign = 'right';
+      ctx.fillText(y.toFixed(2), 36, py + 3);
+    }
+
+    // Critical coupling line Kc
+    const kc = 2 / Math.PI;
+    if (K > 0) {
+      const kcNorm = Math.min(kc / 5, 1);
+    }
+
+    // Line
+    ctx.beginPath();
+    const step = (w - 50) / histLen;
+    for (let i = 0; i < orderHistory.length; i++) {
+      const x = 44 + i * step;
+      const y = h - 20 - (h - 40) * Math.min(orderHistory[i], 1);
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.strokeStyle = '#4a9eff';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Fill under
+    const lastX = 44 + (orderHistory.length - 1) * step;
+    ctx.lineTo(lastX, h - 20);
+    ctx.lineTo(44, h - 20);
+    ctx.closePath();
+    const grad = ctx.createLinearGradient(0, 0, 0, h);
+    grad.addColorStop(0, 'rgba(74,158,255,0.15)');
+    grad.addColorStop(1, 'rgba(74,158,255,0)');
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    // Current value endpoint
+    if (orderHistory.length > 0) {
+      const last = orderHistory[orderHistory.length - 1];
+      const lx = 44 + (orderHistory.length - 1) * step;
+      const ly = h - 20 - (h - 40) * Math.min(last, 1);
+      ctx.beginPath();
+      ctx.arc(lx, ly, 4, 0, PI2);
+      ctx.fillStyle = '#4a9eff';
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(lx, ly, 8, 0, PI2);
+      ctx.fillStyle = 'rgba(74,158,255,0.2)';
+      ctx.fill();
+    }
+  }
+
+  function drawFreq() {
+    const { ctx, w, h } = freq;
+    ctx.clearRect(0, 0, w, h);
+
+    const sorted = [...omegas].sort((a, b) => a - b);
+    const barW = Math.max(2, (w - 20) / N - 2);
+
+    for (let i = 0; i < N; i++) {
+      const x = 10 + i * ((w - 20) / N);
+      const norm = (sorted[i] + 1) / 4;
+      const barH = Math.max(4, (h - 40) * Math.abs(norm));
+
+      const hue = norm > 0.5 ? '#22d68a' : norm > 0.3 ? '#4a9eff' : '#ff6b4a';
+      ctx.fillStyle = hue;
+      ctx.globalAlpha = 0.7;
+      ctx.fillRect(x, h - 20 - barH, barW, barH);
+      ctx.globalAlpha = 0.15;
+      ctx.fillRect(x, h - 20 - barH - 4, barW, barH + 4);
+      ctx.globalAlpha = 1;
+    }
+
+    // Axis
+    ctx.strokeStyle = '#1e2230';
+    ctx.beginPath();
+    ctx.moveTo(10, h - 20);
+    ctx.lineTo(w - 10, h - 20);
+    ctx.stroke();
+
+    ctx.fillStyle = '#555';
+    ctx.font = '9px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('ω (natural frequency)', w / 2, h - 4);
+  }
+
+  function drawPhase() {
+    const { ctx, w, h } = phase;
+    ctx.clearRect(0, 0, w, h);
+
+    const barW = Math.max(2, (w - 20) / N - 2);
+    const midY = h / 2;
+
+    // Zero line
+    ctx.strokeStyle = '#1e2230';
+    ctx.beginPath();
+    ctx.moveTo(10, midY);
+    ctx.lineTo(w - 10, midY);
+    ctx.stroke();
+
+    // Compute dtheta/dt for each
+    const sinAvg = thetas.reduce((s, t) => s + Math.sin(t), 0) / N;
+    const cosAvg = thetas.reduce((s, t) => s + Math.cos(t), 0) / N;
+
+    for (let i = 0; i < N; i++) {
+      const coupling = (K / N) * thetas.reduce((s, t, j) => {
+        if (j === i) return s;
+        return s + Math.sin(t - thetas[i]);
+      }, 0);
+      const vel = omegas[i] + coupling;
+      const x = 10 + i * ((w - 20) / N);
+      const barH = vel * (h - 40) / 6;
+
+      const color = vel > 0 ? '#22d68a' : '#ff6b4a';
+      ctx.fillStyle = color;
+      ctx.globalAlpha = 0.65;
+      if (barH > 0) {
+        ctx.fillRect(x, midY - barH, barW, barH);
+      } else {
+        ctx.fillRect(x, midY, barW, -barH);
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    ctx.fillStyle = '#555';
+    ctx.font = '9px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('dθ/dt per oscillator', w / 2, h - 4);
+  }
+
+  function updateMetrics(state) {
+    const r = state.r;
+    const mOrder = document.getElementById('m-order');
+    mOrder.textContent = r.toFixed(3);
+    mOrder.className = 'value ' + (r > 0.7 ? 'high' : r > 0.3 ? 'mid' : 'low');
+
+    const coh = Math.round(r * 100);
+    const mCoh = document.getElementById('m-coherence');
+    mCoh.textContent = coh + '%';
+    mCoh.className = 'value ' + (coh > 70 ? 'high' : coh > 30 ? 'mid' : 'low');
+
+    const meanF = omegas.reduce((s, o) => s + o, 0) / N;
+    document.getElementById('m-freq').textContent = meanF.toFixed(2) + ' Hz';
+    document.getElementById('m-ghost').textContent = ghostCount;
+    if (ghostCount > 0) document.getElementById('m-ghost').style.color = '#ff6b4a';
+    document.getElementById('m-n').textContent = N;
+    document.getElementById('m-k').textContent = K.toFixed(2);
+  }
+
+  // Animation loop
+  function frame() {
+    const state = step() || { r: 0, psi: 0 };
+    if (!paused) {
+      drawRing(state);
+      drawOrder();
+      drawFreq();
+      drawPhase();
+      updateMetrics(state);
+    }
+    requestAnimationFrame(frame);
+  }
+  frame();
+
+  // Controls
+  const kSlider = document.getElementById('k-slider');
+  const nSlider = document.getElementById('n-slider');
+  const noiseSlider = document.getElementById('noise-slider');
+
+  kSlider.addEventListener('input', () => {
+    K = parseFloat(kSlider.value);
+    document.getElementById('k-val').textContent = K.toFixed(2);
+  });
+
+  nSlider.addEventListener('input', () => {
+    N = parseInt(nSlider.value);
+    document.getElementById('n-val').textContent = N;
+    initOscillators();
+  });
+
+  noiseSlider.addEventListener('input', () => {
+    noise = parseFloat(noiseSlider.value);
+    document.getElementById('noise-val').textContent = noise.toFixed(2);
+  });
+
+  document.getElementById('btn-reset').addEventListener('click', () => {
+    ghostCount = 0;
+    initOscillators();
+  });
+
+  document.getElementById('btn-pause').addEventListener('click', function() {
+    paused = !paused;
+    this.textContent = paused ? 'Resume' : 'Pause';
+    this.classList.toggle('active', paused);
+  });
+
+  document.getElementById('btn-perturb').addEventListener('click', () => {
+    for (let i = 0; i < N; i++) {
+      thetas[i] += (Math.random() - 0.5) * 3;
+      thetas[i] = ((thetas[i] % PI2) + PI2) % PI2;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
