@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AGI School Academy — Research Portfolio</title>
+<meta name="description" content="Independent AI research portfolio by Mihai Roșca. Ethical AI systems, semantic protocols, and applied pedagogy.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#fafaf8;--surface:#ffffff;--text:#1a1a2e;--muted:#555;--light:#888;
+  --accent:#2d5f8a;--accent2:#1a6b4a;--border:#e0e0e0;--card-shadow:0 1px 3px rgba(0,0,0,.06);
+  --font-display:'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif;
+  --font-body:'Segoe UI','Helvetica Neue',Arial,sans-serif;
+  --font-mono:'Consolas','Courier New',monospace;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#0f0f14;--surface:#1a1a24;--text:#e0e0e0;--muted:#aaa;--light:#777;
+    --accent:#5a9fd4;--accent2:#4caf7a;--border:#2a2a3a;--card-shadow:0 1px 4px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f0f14;--surface:#1a1a24;--text:#e0e0e0;--muted:#aaa;--light:#777;
+  --accent:#5a9fd4;--accent2:#4caf7a;--border:#2a2a3a;--card-shadow:0 1px 4px rgba(0,0,0,.3);
+}
+:root[data-theme="light"]{
+  --bg:#fafaf8;--surface:#ffffff;--text:#1a1a2e;--muted:#555;--light:#888;
+  --accent:#2d5f8a;--accent2:#1a6b4a;--border:#e0e0e0;--card-shadow:0 1px 3px rgba(0,0,0,.06);
+}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+.container{max-width:820px;margin:0 auto;padding:0 24px}
+
+/* Header */
+header{padding:80px 0 40px;text-align:center}
+header h1{font-family:var(--font-display);font-size:2.2rem;font-weight:400;letter-spacing:.04em;color:var(--text);margin-bottom:8px}
+header .subtitle{font-size:1rem;color:var(--muted);letter-spacing:.02em}
+header .line{width:60px;height:2px;background:var(--accent);margin:24px auto 0}
+
+/* Author block */
+.author{text-align:center;padding:30px 0 50px;border-bottom:1px solid var(--border)}
+.author-name{font-family:var(--font-display);font-size:1.15rem;color:var(--text);margin-bottom:4px}
+.author-role{font-size:.85rem;color:var(--muted)}
+.author-links{margin-top:10px;font-size:.82rem;color:var(--light)}
+.author-links a{color:var(--accent);text-decoration:none}
+.author-links a:hover{text-decoration:underline}
+
+/* Section */
+section{padding:50px 0 30px}
+section h2{font-family:var(--font-display);font-size:1.35rem;font-weight:400;color:var(--text);margin-bottom:6px;letter-spacing:.02em}
+section .section-line{width:40px;height:1.5px;background:var(--accent);margin-bottom:24px}
+section p{color:var(--muted);font-size:.92rem;margin-bottom:20px;max-width:680px}
+
+/* Document list */
+.doc-list{list-style:none;margin:0;padding:0}
+.doc-item{display:flex;align-items:flex-start;gap:16px;padding:18px 20px;margin-bottom:12px;background:var(--surface);border:1px solid var(--border);border-radius:4px;box-shadow:var(--card-shadow);transition:border-color .2s}
+.doc-item:hover{border-color:var(--accent)}
+.doc-icon{flex-shrink:0;width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--bg);border:1px solid var(--border);border-radius:3px;font-size:.7rem;font-family:var(--font-mono);color:var(--accent);font-weight:700;letter-spacing:.03em;margin-top:2px}
+.doc-info{flex:1;min-width:0}
+.doc-title{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:3px}
+.doc-title a{color:var(--text);text-decoration:none}
+.doc-title a:hover{color:var(--accent)}
+.doc-desc{font-size:.82rem;color:var(--muted);line-height:1.5}
+.doc-meta{font-size:.75rem;color:var(--light);margin-top:6px;font-family:var(--font-mono)}
+
+/* Tags */
+.tag{display:inline-block;font-size:.68rem;padding:2px 8px;border-radius:2px;margin-right:6px;font-family:var(--font-mono);letter-spacing:.03em}
+.tag-research{background:rgba(45,95,138,.1);color:var(--accent)}
+.tag-ethics{background:rgba(26,107,74,.1);color:var(--accent2)}
+.tag-cv{background:rgba(139,0,0,.08);color:#8B4513}
+
+/* Principles */
+.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px;margin-top:24px}
+.principle{padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:3px;border-left:3px solid var(--accent)}
+.principle-num{font-family:var(--font-mono);font-size:.72rem;color:var(--accent);font-weight:700;margin-bottom:4px}
+.principle-name{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:4px}
+.principle-desc{font-size:.78rem;color:var(--muted);line-height:1.5}
+
+/* Footer */
+footer{padding:50px 0 40px;border-top:1px solid var(--border);text-align:center}
+footer p{font-size:.78rem;color:var(--light);margin-bottom:4px}
+footer a{color:var(--accent);text-decoration:none}
+
+/* Responsive */
+@media(max-width:600px){
+  header{padding:50px 0 30px}
+  header h1{font-size:1.6rem}
+  .principles{grid-template-columns:1fr}
+  .doc-item{flex-direction:column;gap:10px}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+  <h1>AGI School Academy</h1>
+  <div class="subtitle">Independent Research in Ethical AI Systems</div>
+  <div class="line"></div>
+</header>
+
+<div class="author">
+  <div class="author-name">Mihai Roșca</div>
+  <div class="author-role">Independent Researcher &middot; AI Systems Architect &middot; Educator</div>
+  <div class="author-links">
+    <a href="https://amiecosystems.com">amiecosystems.com</a> &middot;
+    ORCID: <a href="https://orcid.org/0009-0001-1422-6209">0009-0001-1422-6209</a> &middot;
+    <a href="https://github.com/amidigiart">github.com/amidigiart</a>
+  </div>
+</div>
+
+<section>
+  <h2>Research Portfolio</h2>
+  <div class="section-line"></div>
+  <p>Selected papers, frameworks, and technical documents from the ami* / BRIDGRAI ecosystem. 3.5 years of independent research, zero external funding. Everything verifiable.</p>
+
+  <ul class="doc-list">
+
+    <li class="doc-item">
+      <div class="doc-icon">DSEI</div>
+      <div class="doc-info">
+        <div class="doc-title"><a href="DSEI_Ethical_Integration_Rosca_2026.docx">Discrete System of Ethical Integration</a></div>
+        <div class="doc-desc">A system where ethics is engraved in code, not written on paper. Seven principles with structural tests &mdash; if an ethical test fails, the build fails. Operating at the susceptible-admissible level.</div>
+        <div class="doc-meta"><span class="tag tag-ethics">ETHICS</span><span class="tag tag-research">FRAMEWORK</span> August 2026 &middot; 10 chapters</div>
+      </div>
+    </li>
+
+    <li class="doc-item">
+      <div class="doc-icon">GAI</div>
+      <div class="doc-info">
+        <div class="doc-title"><a href="AmiGibberishAI_Thesis_Rosca_2026.docx">AmiGibberishAI: Semantic Interoperability Protocol</a></div>
+        <div class="doc-desc">A four-layer protocol with 32 semantic primitives for human&ndash;AI and AI&ndash;AI communication. Formal EBNF grammar, LL(1) parser, Intent-Preservation Bound theorem, post-quantum cryptography (Dilithium-5), Tezos blockchain anchoring.</div>
+        <div class="doc-meta"><span class="tag tag-research">RESEARCH</span> August 2026 &middot; 11 chapters &middot; 45 references</div>
+      </div>
+    </li>
+
+    <li class="doc-item">
+      <div class="doc-icon">SNP</div>
+      <div class="doc-info">
+        <div class="doc-title"><a href="Semantic_Notarization_Paper_Rosca_2026.docx">Three-Dimensional Semantic Notarization</a></div>
+        <div class="doc-desc">Certifying not just existence, but meaning and intention. Dual-layer architecture: internal semantic verification (cosine similarity, KL divergence) and external cryptographic proof (ECDSA P-256, SHA-256, Tezos).</div>
+        <div class="doc-meta"><span class="tag tag-research">RESEARCH</span> August 2026 &middot; 10 sections &middot; 10 references</div>
+      </div>
+    </li>
+
+    <li class="doc-item">
+      <div class="doc-icon">HAT</div>
+      <div class="doc-info">
+        <div class="doc-title"><a href="The_Human_Anchor_Thesis_Claude_2026.docx">The Human Anchor Thesis</a></div>
+        <div class="doc-desc">On the Necessity of Human Semantic Grounding in Artificial Intelligence Systems. Co-authored with Claude (Opus 4.6). An AI system without a human anchor will lose coherence &mdash; this is not a technical limitation, it is a structural property of meaning.</div>
+        <div class="doc-meta"><span class="tag tag-research">RESEARCH</span><span class="tag tag-ethics">ETHICS</span> August 2026 &middot; 8 chapters</div>
+      </div>
+    </li>
+
+    <li class="doc-item">
+      <div class="doc-icon">CV</div>
+      <div class="doc-info">
+        <div class="doc-title"><a href="Mihai_Rosca_CV_Competente_2026.docx">Competency-Based CV</a></div>
+        <div class="doc-desc">22 products, 106 blockchain-protected IP assets, 3.5 years bootstrapped, zero funding. Core competencies across AI research, software architecture, education, IP protection, and entrepreneurship.</div>
+        <div class="doc-meta"><span class="tag tag-cv">CV</span> August 2026</div>
+      </div>
+    </li>
+
+    <li class="doc-item">
+      <div class="doc-icon">P6</div>
+      <div class="doc-info">
+        <div class="doc-title"><a href="https://doi.org/10.5281/zenodo.21269201">P6: Ghost Peak Bifurcation in Adler Systems</a></div>
+        <div class="doc-desc">First published paper. Ghost peak phenomenon in coupled oscillator systems. DOI: 10.5281/zenodo.21269201. Code and independent reproduction available.</div>
+        <div class="doc-meta"><span class="tag tag-research">RESEARCH</span> July 2026 &middot; Zenodo &middot; MIT + CC BY 4.0</div>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<section>
+  <h2>DSEI: Seven Principles</h2>
+  <div class="section-line"></div>
+  <p>The Discrete System of Ethical Integration operates through seven verifiable principles. Each has a structural test that runs at build time. Ethics that can be disabled is decoration.</p>
+
+  <div class="principles">
+    <div class="principle">
+      <div class="principle-num">I</div>
+      <div class="principle-name">Honest Refusal</div>
+      <div class="principle-desc">The system refuses rather than confabulates. When two AI engines disagree, the answer is "I don't know."</div>
+    </div>
+    <div class="principle">
+      <div class="principle-num">II</div>
+      <div class="principle-name">Concordance Transparency</div>
+      <div class="principle-desc">Every response shows the concordance percentage between engines. The user never has to guess confidence.</div>
+    </div>
+    <div class="principle">
+      <div class="principle-num">III</div>
+      <div class="principle-name">Human Escalation</div>
+      <div class="principle-desc">When the system exceeds its competence, it escalates to a human. The arbitration agent has no verdict field.</div>
+    </div>
+    <div class="principle">
+      <div class="principle-num">IV</div>
+      <div class="principle-name">Anti-Addiction</div>
+      <div class="principle-desc">Systems for minors have hard-stop mechanisms. Maximum engagement does not justify extended sessions. Zero dark patterns.</div>
+    </div>
+    <div class="principle">
+      <div class="principle-num">V</div>
+      <div class="principle-name">Data Minimisation</div>
+      <div class="principle-desc">Alerts contain category and level, not conversation content. Logs preserve the event, not the person.</div>
+    </div>
+    <div class="principle">
+      <div class="principle-num">VI</div>
+      <div class="principle-name">Manipulation Detection</div>
+      <div class="principle-desc">Six-axis detection: emotional, logical, authority, urgency, social, framing. Each axis reported independently.</div>
+    </div>
+    <div class="principle">
+      <div class="principle-num">VII</div>
+      <div class="principle-name">Human Anchor</div>
+      <div class="principle-desc">Every AI-to-AI communication chain must trace back to a cryptographically signed human intent declaration.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Ecosystem</h2>
+  <div class="section-line"></div>
+  <p>The ami* ecosystem comprises 22 products built on shared engines (REAI/UKBE Core), with 106 IP assets blockchain-timestamped as immutable proof of prior art. Key platforms:</p>
+  <ul class="doc-list">
+    <li class="doc-item">
+      <div class="doc-icon">ami*</div>
+      <div class="doc-info">
+        <div class="doc-title"><a href="https://amiecosystems.com">amiecosystems.com</a></div>
+        <div class="doc-desc">Central hub &mdash; 22 products across AI companions, semantic verification, ethical pedagogy, and blockchain provenance. Six languages.</div>
+      </div>
+    </li>
+    <li class="doc-item">
+      <div class="doc-icon">A2A</div>
+      <div class="doc-info">
+        <div class="doc-title"><a href="https://bridgrai.com">BRIDGRAI A2A Platform</a></div>
+        <div class="doc-desc">8 specialised agents with Notary of Meaning trust layer. JSON-RPC 2.0, Google A2A spec. 18 verified tests.</div>
+      </div>
+    </li>
+    <li class="doc-item">
+      <div class="doc-icon">KAG</div>
+      <div class="doc-info">
+        <div class="doc-title"><a href="https://kinderagi.com">KinderAGI</a></div>
+        <div class="doc-desc">Adaptive educational software with anti-addiction safeguards. Apache-2.0 because children's safety must be auditable, not secret.</div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2024&ndash;2026 Mihai Roșca / BRIDGRAI &mdash; All Rights Reserved</p>
+    <p>Spiru Haret &middot; Brăila &middot; Romania &nbsp;|&nbsp; <a href="mailto:mihairosca1982@gmail.com">mihairosca1982@gmail.com</a></p>
+    <p style="margin-top:12px;font-size:.72rem;color:var(--light)">We don't lie. We build.</p>
+  </div>
+</footer>
+
+</body>
+</html>
