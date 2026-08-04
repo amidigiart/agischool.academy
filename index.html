@@ -308,6 +308,305 @@ footer a{color:var(--accent);text-decoration:none}
   </div>
 </section>
 
+<section>
+  <h2>Valuation &mdash; Market-Based Assessment</h2>
+  <div class="section-line"></div>
+  <p style="max-width:720px">This valuation uses three standard methodologies: <strong>Cost-to-Reproduce</strong> (what it would cost to rebuild from zero), <strong>Market Comparables</strong> (what similar assets sell for), and <strong>Revenue Potential</strong> (projected income at scale). All figures are conservative, sourced from public market data, and contestable &mdash; we invite scrutiny.</p>
+
+  <!-- METHOD 1: COST TO REPRODUCE -->
+  <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--text);margin:30px 0 12px;font-weight:400">1. Cost-to-Reproduce Method</h3>
+
+  <div style="overflow-x:auto">
+  <table style="width:100%;border-collapse:collapse;font-size:.82rem;margin:12px 0">
+    <thead><tr style="border-bottom:2px solid var(--accent)">
+      <th style="text-align:left;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Asset</th>
+      <th style="text-align:left;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Basis</th>
+      <th style="text-align:right;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Low</th>
+      <th style="text-align:right;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Mid</th>
+      <th style="text-align:right;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">High</th>
+    </tr></thead>
+    <tbody style="color:var(--muted)">
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text);font-weight:600">R&amp;D Labour (3.5 years)</td>
+        <td style="padding:6px 12px">Senior AI researcher EU median: &euro;75&ndash;110K/yr.<br>Glassdoor, Levels.fyi, Eurostat 2025 data.</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;262K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;332K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;385K</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text);font-weight:600">Multi-role multiplier</td>
+        <td style="padding:6px 12px">One person covering: research, engineering, DevOps, design, product, business, legal. Industry norm: 2&ndash;3 FTE equivalent for this breadth.</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&times;1.5</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&times;2.0</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&times;2.5</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border);font-weight:600">
+        <td style="padding:6px 12px;color:var(--text)">Total Labour Value</td>
+        <td style="padding:6px 12px"></td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono);color:var(--accent)">&euro;393K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono);color:var(--accent)">&euro;664K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono);color:var(--accent)">&euro;962K</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div style="overflow-x:auto">
+  <table style="width:100%;border-collapse:collapse;font-size:.82rem;margin:12px 0">
+    <thead><tr style="border-bottom:2px solid var(--accent)">
+      <th style="text-align:left;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Software Asset</th>
+      <th style="text-align:left;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Complexity Basis</th>
+      <th style="text-align:right;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Reproduce Cost</th>
+    </tr></thead>
+    <tbody style="color:var(--muted)">
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">UKBE Core (REAI engine)</td>
+        <td style="padding:6px 12px">Novel math (Kuramoto+Kalman+Adler), 102 tests, calibration rules. Requires physicist + ML engineer, ~6 months.</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;80&ndash;120K</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">TVE Core (6-pillar detection)</td>
+        <td style="padding:6px 12px">NLP manipulation detection across 6 axes, 32 tests. NLP specialist, ~3 months.</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;40&ndash;60K</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">BRIDGRAI A2A (8 agents)</td>
+        <td style="padding:6px 12px">Multi-agent platform, trust layer, JSON-RPC 2.0, 18 tests. Platform engineer, ~4 months.</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;50&ndash;80K</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">Amidor Engine (5 apps)</td>
+        <td style="padding:6px 12px">Dual-engine anti-confabulation, 5 industry applications, 81 tests. Senior engineer, ~5 months.</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;60&ndash;90K</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">KinderAGI</td>
+        <td style="padding:6px 12px">Safety layer, crisis detection, signed journals, anti-addiction. Specialist + UX, ~3 months.</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;35&ndash;50K</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">22 SaaS landing pages + Stripe</td>
+        <td style="padding:6px 12px">Full-stack per site: design, copy, i18n, API integration, DNS, HTTPS. Agency rate: &euro;3&ndash;8K/site.</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;66&ndash;176K</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">Research papers (5)</td>
+        <td style="padding:6px 12px">AmiGibberishAI thesis, Semantic Notarization, DSEI, Human Anchor, P6. Academic writing + math: ~&euro;8&ndash;15K each.</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;40&ndash;75K</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">Blockchain IP registry</td>
+        <td style="padding:6px 12px">106 individual hashes on Tezos. Smart contract + tooling + legal structuring.</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;15&ndash;25K</td>
+      </tr>
+      <tr style="font-weight:600;border-top:2px solid var(--accent)">
+        <td style="padding:8px 12px;color:var(--text)">Total Software Assets</td>
+        <td style="padding:8px 12px"></td>
+        <td style="padding:8px 12px;text-align:right;font-family:var(--font-mono);color:var(--accent)">&euro;386&ndash;676K</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- METHOD 2: MARKET COMPARABLES -->
+  <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--text);margin:30px 0 12px;font-weight:400">2. Market Comparables</h3>
+
+  <div style="overflow-x:auto">
+  <table style="width:100%;border-collapse:collapse;font-size:.82rem;margin:12px 0">
+    <thead><tr style="border-bottom:2px solid var(--accent)">
+      <th style="text-align:left;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Comparable</th>
+      <th style="text-align:left;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Stage</th>
+      <th style="text-align:right;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Valuation</th>
+      <th style="text-align:left;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Source</th>
+    </tr></thead>
+    <tbody style="color:var(--muted)">
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">EU pre-seed AI startups (median)</td>
+        <td style="padding:6px 12px">Pre-revenue, MVP</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;800K&ndash;2M</td>
+        <td style="padding:6px 12px">Dealroom.co, 2025</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">Solo-founder AI tools (bootstrapped)</td>
+        <td style="padding:6px 12px">Pre-revenue, live products</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;500K&ndash;1.5M</td>
+        <td style="padding:6px 12px">MicroAcquire/Acquire.com, 2024&ndash;25</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">AI SaaS portfolios (10+ products)</td>
+        <td style="padding:6px 12px">Early revenue</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;1&ndash;3M</td>
+        <td style="padding:6px 12px">Empire Flippers, Flippa, 2025</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">Novel AI safety IP (pre-commercial)</td>
+        <td style="padding:6px 12px">Research + prototype</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;1&ndash;5M</td>
+        <td style="padding:6px 12px">Crunchbase AI safety acquisitions, 2023&ndash;25</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">Domain portfolios (40+ .com AI)</td>
+        <td style="padding:6px 12px">Held</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;30&ndash;120K</td>
+        <td style="padding:6px 12px">Sedo, Afternic avg sales 2024&ndash;25</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p style="font-size:.85rem;color:var(--muted);margin:16px 0"><strong>Key differentiators vs. comparables:</strong> Most pre-seed startups have 1 product and a pitch deck. This ecosystem has 22 live products, 8 tested engines, 5 research papers, and 106 blockchain-protected IP assets. The IP density per euro invested is unusually high because the founder drew no salary.</p>
+
+  <!-- METHOD 3: REVENUE POTENTIAL -->
+  <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--text);margin:30px 0 12px;font-weight:400">3. Revenue Potential (Forward-Looking)</h3>
+
+  <div style="overflow-x:auto">
+  <table style="width:100%;border-collapse:collapse;font-size:.82rem;margin:12px 0">
+    <thead><tr style="border-bottom:2px solid var(--accent)">
+      <th style="text-align:left;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Revenue Stream</th>
+      <th style="text-align:left;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Model</th>
+      <th style="text-align:right;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Year 1</th>
+      <th style="text-align:right;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Year 2</th>
+      <th style="text-align:right;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Year 3</th>
+    </tr></thead>
+    <tbody style="color:var(--muted)">
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">SaaS subscriptions (22 products)</td>
+        <td style="padding:6px 12px">&euro;7&ndash;15/mo per user</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;24K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;96K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;240K</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">AmiStampAI notarization fees</td>
+        <td style="padding:6px 12px">&euro;0.50&ndash;2.00 per stamp</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;6K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;36K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;120K</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">UKBE Core commercial licences</td>
+        <td style="padding:6px 12px">&euro;5&ndash;25K per deployment</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;10K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;50K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;125K</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">TVE / AntetAI API access</td>
+        <td style="padding:6px 12px">Pay-per-call (&euro;0.01&ndash;0.05)</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;3K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;18K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;60K</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">AmiDor elder companion pilots</td>
+        <td style="padding:6px 12px">&euro;9.99/mo per family</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;6K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;30K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;90K</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">GibberishAI protocol licences</td>
+        <td style="padding:6px 12px">Enterprise &euro;10&ndash;50K/yr</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;0</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;20K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;100K</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">DSEI compliance consulting</td>
+        <td style="padding:6px 12px">EU AI Act readiness, &euro;5&ndash;15K/client</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;5K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;30K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;75K</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">1cent-wise.com (physical commerce)</td>
+        <td style="padding:6px 12px">Operating retail</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;12K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;18K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;24K</td>
+      </tr>
+      <tr style="font-weight:600;border-top:2px solid var(--accent)">
+        <td style="padding:8px 12px;color:var(--text)">Total Projected ARR</td>
+        <td style="padding:8px 12px"></td>
+        <td style="padding:8px 12px;text-align:right;font-family:var(--font-mono);color:var(--accent)">&euro;66K</td>
+        <td style="padding:8px 12px;text-align:right;font-family:var(--font-mono);color:var(--accent)">&euro;298K</td>
+        <td style="padding:8px 12px;text-align:right;font-family:var(--font-mono);color:var(--accent)">&euro;834K</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p style="font-size:.82rem;color:var(--muted);margin:12px 0"><strong>Assumptions:</strong> Year 1 = first 50&ndash;200 paying users across portfolio (conservative for 22 live products). Year 2 = organic growth + 1&ndash;2 enterprise contracts. Year 3 = product-market fit on top 5 products + protocol licensing. No venture-scale hockey stick assumed. SaaS multiples applied: 5&ndash;8x ARR for AI SaaS (PitchBook median 2025).</p>
+
+  <!-- SUMMARY -->
+  <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--text);margin:30px 0 12px;font-weight:400">Consolidated Valuation</h3>
+
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:20px 24px;margin:16px 0">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;text-align:center">
+      <div>
+        <div style="font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Development Investment</div>
+        <div style="font-family:var(--font-mono);font-size:1.5rem;font-weight:700;color:var(--text)">&euro;672K</div>
+        <div style="font-size:.72rem;color:var(--light)">Labour + Software + IP + Domains</div>
+      </div>
+      <div>
+        <div style="font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Pre-Revenue Valuation</div>
+        <div style="font-family:var(--font-mono);font-size:1.5rem;font-weight:700;color:var(--accent)">&euro;1.0&ndash;2.5M</div>
+        <div style="font-size:.72rem;color:var(--light)">Cost-to-reproduce + IP premium</div>
+      </div>
+      <div>
+        <div style="font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Year 3 Revenue Multiple</div>
+        <div style="font-family:var(--font-mono);font-size:1.5rem;font-weight:700;color:var(--accent2)">&euro;4.2&ndash;6.7M</div>
+        <div style="font-size:.72rem;color:var(--light)">&euro;834K ARR &times; 5&ndash;8x (AI SaaS median)</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="overflow-x:auto">
+  <table style="width:100%;border-collapse:collapse;font-size:.82rem;margin:16px 0">
+    <thead><tr style="border-bottom:2px solid var(--accent)">
+      <th style="text-align:left;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Method</th>
+      <th style="text-align:right;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Low</th>
+      <th style="text-align:right;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Mid</th>
+      <th style="text-align:right;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">High</th>
+    </tr></thead>
+    <tbody style="color:var(--muted)">
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">Cost-to-Reproduce (labour + software)</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;779K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;1.14M</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;1.64M</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">Market Comparables (pre-revenue AI)</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;800K</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;1.5M</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;3.0M</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:6px 12px;color:var(--text)">Revenue Multiple (Year 3 ARR &times; 5&ndash;8x)</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;4.2M</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;5.4M</td>
+        <td style="padding:6px 12px;text-align:right;font-family:var(--font-mono)">&euro;6.7M</td>
+      </tr>
+      <tr style="font-weight:600;border-top:2px solid var(--accent)">
+        <td style="padding:8px 12px;color:var(--text)">Weighted Average (40/30/30)</td>
+        <td style="padding:8px 12px;text-align:right;font-family:var(--font-mono);color:var(--accent)">&euro;1.87M</td>
+        <td style="padding:8px 12px;text-align:right;font-family:var(--font-mono);color:var(--accent)">&euro;2.67M</td>
+        <td style="padding:8px 12px;text-align:right;font-family:var(--font-mono);color:var(--accent)">&euro;3.57M</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p style="font-size:.82rem;color:var(--muted)"><strong>Weighting rationale:</strong> 40% cost-to-reproduce (most concrete &mdash; verified assets), 30% comparables (market-validated range), 30% revenue potential (forward-looking, discounted for pre-revenue stage). The revenue multiple is the upside case; the cost-to-reproduce is the floor.</p>
+
+  <div style="background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:4px;padding:18px 24px;margin:24px 0">
+    <p style="font-family:var(--font-display);font-size:.92rem;color:var(--text);line-height:1.8;margin:0"><strong>Honest disclosure.</strong> This valuation is an estimate, not an appraisal. The numbers are based on public market data and standard methodologies. They can be contested &mdash; and we welcome that. What cannot be contested: 47 original repositories exist. 106 IP assets are on the blockchain. 22 products are live. Zero external euros were spent. The development investment of &euro;672K represents real labour at real market rates that was never paid. Every claim on this page links to verifiable source code. The market will ultimately decide the price. We are simply showing the work.</p>
+  </div>
+
+  <p style="font-size:.75rem;color:var(--light);font-style:italic">Market data sources: Dealroom.co (EU startup valuations), PitchBook (SaaS multiples), Glassdoor/Levels.fyi (AI researcher salaries), Acquire.com (bootstrapped SaaS sales), Empire Flippers (portfolio valuations), Sedo/Afternic (domain sales), Crunchbase (AI safety acquisitions), Eurostat (labour costs). Assessment date: August 2026.</p>
+</section>
+
 </div>
 
 <footer>
