@@ -234,32 +234,78 @@ footer a{color:var(--accent);text-decoration:none}
 </section>
 
 <section>
-  <h2>Ecosystem</h2>
+  <h2>Full Inventory &mdash; What We Built</h2>
   <div class="section-line"></div>
-  <p>The ami* ecosystem comprises 22 products built on shared engines (REAI/UKBE Core), with 106 IP assets blockchain-timestamped as immutable proof of prior art. Key platforms:</p>
+  <p style="max-width:720px">47 original repositories on GitHub. Zero external funding. Zero grants. Zero investors. Zero institutional backing. Every line of code, every landing page, every research paper, every blockchain entry was built on a Dell Latitude E6540 and a Xiaomi Redmi Note 13. This is the complete, verified inventory.</p>
+
+  <div style="display:grid;grid-template-columns:1fr;gap:8px;margin:24px 0">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:16px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;text-align:center">
+      <div><div style="font-family:var(--font-mono);font-size:1.8rem;font-weight:700;color:var(--accent)">47</div><div style="font-size:.75rem;color:var(--muted)">Original Repositories</div></div>
+      <div><div style="font-family:var(--font-mono);font-size:1.8rem;font-weight:700;color:var(--accent)">106</div><div style="font-size:.75rem;color:var(--muted)">IP Assets on Blockchain</div></div>
+      <div><div style="font-family:var(--font-mono);font-size:1.8rem;font-weight:700;color:var(--accent)">0</div><div style="font-size:.75rem;color:var(--muted)">External Funding</div></div>
+      <div><div style="font-family:var(--font-mono);font-size:1.8rem;font-weight:700;color:var(--accent)">3.5y</div><div style="font-size:.75rem;color:var(--muted)">Bootstrapped</div></div>
+    </div>
+  </div>
+
+  <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--text);margin:30px 0 12px;font-weight:400">Research Engines &amp; Core IP</h3>
   <ul class="doc-list">
-    <li class="doc-item">
-      <div class="doc-icon">ami*</div>
-      <div class="doc-info">
-        <div class="doc-title"><a href="https://amiecosystems.com">amiecosystems.com</a></div>
-        <div class="doc-desc">Central hub &mdash; 22 products across AI companions, semantic verification, ethical pedagogy, and blockchain provenance. Six languages.</div>
-      </div>
-    </li>
-    <li class="doc-item">
-      <div class="doc-icon">A2A</div>
-      <div class="doc-info">
-        <div class="doc-title"><a href="https://bridgrai.com">BRIDGRAI A2A Platform</a></div>
-        <div class="doc-desc">8 specialised agents with Notary of Meaning trust layer. JSON-RPC 2.0, Google A2A spec. 18 verified tests.</div>
-      </div>
-    </li>
-    <li class="doc-item">
-      <div class="doc-icon">KAG</div>
-      <div class="doc-info">
-        <div class="doc-title"><a href="https://kinderagi.com">KinderAGI</a></div>
-        <div class="doc-desc">Adaptive educational software with anti-addiction safeguards. Apache-2.0 because children's safety must be auditable, not secret.</div>
-      </div>
-    </li>
+    <li class="doc-item"><div class="doc-icon" style="font-size:.6rem">UKBE</div><div class="doc-info"><div class="doc-title"><a href="https://github.com/amidigiart/ukbe-core">ukbe-core</a></div><div class="doc-desc">REAI resonance engine (Kuramoto + Kalman + adaptive coupling). 102/102 tests. Apache-2.0. The mathematical foundation of everything.</div><div class="doc-meta"><span class="tag tag-research">ENGINE</span> Apache-2.0</div></div></li>
+    <li class="doc-item"><div class="doc-icon" style="font-size:.6rem">TVE</div><div class="doc-info"><div class="doc-title"><a href="https://github.com/amidigiart/tve-core">tve-core</a></div><div class="doc-desc">Truth Vector Engine &mdash; 6-pillar manipulation detection (emotional, logical, authority, urgency, social, framing). 32/32 tests.</div><div class="doc-meta"><span class="tag tag-ethics">ETHICS</span></div></div></li>
+    <li class="doc-item"><div class="doc-icon" style="font-size:.6rem">FUSE</div><div class="doc-info"><div class="doc-title"><a href="https://github.com/amidigiart/tve-ukbe-fusion">tve-ukbe-fusion</a></div><div class="doc-desc">Unified resonance + truth vector pipeline. UKBE stability meets TVE manipulation detection.</div><div class="doc-meta"><span class="tag tag-research">FUSION</span></div></div></li>
+    <li class="doc-item"><div class="doc-icon" style="font-size:.6rem">A2A</div><div class="doc-info"><div class="doc-title"><a href="https://github.com/amidigiart/bridgrai-a2a">bridgrai-a2a</a></div><div class="doc-desc">BRIDGRAI A2A Platform &mdash; 8 agents (UKBE/CASP/HASN/Sens/ACR/Concordance/Calibration/Heritage). Notar de Sens trust layer. 18 verified tests.</div><div class="doc-meta"><span class="tag tag-research">PLATFORM</span></div></div></li>
+    <li class="doc-item"><div class="doc-icon" style="font-size:.6rem">ADOR</div><div class="doc-info"><div class="doc-title"><a href="https://github.com/amidigiart/amidor-engine">amidor-engine</a></div><div class="doc-desc">Dual-model anti-confabulation engine. 5 applications on one motor: companion, arbitration, micro-grid, ScaleEngine O(N), adaptive pacer. AGPL-3.0/commercial.</div><div class="doc-meta"><span class="tag tag-research">ENGINE</span> AGPL-3.0</div></div></li>
+    <li class="doc-item"><div class="doc-icon" style="font-size:.6rem">KAG</div><div class="doc-info"><div class="doc-title"><a href="https://github.com/amidigiart/kinderagi-core">kinderagi-core</a></div><div class="doc-desc">Adaptive educational AI for children. Crisis detection, anti-addiction hard-stop, Ed25519-signed parent journal. Apache-2.0 because children's safety must be auditable.</div><div class="doc-meta"><span class="tag tag-ethics">ETHICS</span> Apache-2.0</div></div></li>
+    <li class="doc-item"><div class="doc-icon" style="font-size:.6rem">P6</div><div class="doc-info"><div class="doc-title"><a href="https://github.com/amidigiart/p6-adler-ghost-peak">p6-adler-ghost-peak</a></div><div class="doc-desc">Ghost sensitivity peaks in adaptive phase-coupled systems. Adler/SNIC bifurcation. DOI: 10.5281/zenodo.21269201.</div><div class="doc-meta"><span class="tag tag-research">PAPER</span> MIT + CC BY 4.0</div></div></li>
+    <li class="doc-item"><div class="doc-icon" style="font-size:.55rem">TEZOS</div><div class="doc-info"><div class="doc-title"><a href="https://github.com/amidigiart/tezos-ip-registry">tezos-ip-registry</a></div><div class="doc-desc">106 IP entries on Tezos blockchain. Contract KT1Pe2GA11bMpaTL5VH4TY6aZ9xePZ6f5vWX. Immutable proof of prior art.</div><div class="doc-meta"><span class="tag tag-research">BLOCKCHAIN</span></div></div></li>
   </ul>
+
+  <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--text);margin:30px 0 12px;font-weight:400">SaaS Products &mdash; 22 AI Companions</h3>
+  <div style="overflow-x:auto">
+  <table style="width:100%;border-collapse:collapse;font-size:.82rem;margin:12px 0">
+    <thead><tr style="border-bottom:2px solid var(--accent)">
+      <th style="text-align:left;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Domain</th>
+      <th style="text-align:left;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Product</th>
+      <th style="text-align:left;padding:8px 12px;color:var(--accent);font-family:var(--font-mono);font-weight:700">Status</th>
+    </tr></thead>
+    <tbody style="color:var(--muted)">
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amiecosystems.com" style="color:var(--accent);text-decoration:none">amiecosystems.com</a></td><td style="padding:6px 12px">Central Hub &mdash; 22 products, 6 languages</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amiqiai.com" style="color:var(--accent);text-decoration:none">amiqiai.com</a></td><td style="padding:6px 12px">AI Journal &mdash; local-first, ECDSA P-256 signatures</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amiherbai.com" style="color:var(--accent);text-decoration:none">amiherbai.com</a></td><td style="padding:6px 12px">Herbal Companion</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://emoinkai.com" style="color:var(--accent);text-decoration:none">emoinkai.com</a></td><td style="padding:6px 12px">AI Tattoo Design Studio</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amighostai.com" style="color:var(--accent);text-decoration:none">amighostai.com</a></td><td style="padding:6px 12px">Ghost Code &amp; Dependency Audit</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amiagentai.com" style="color:var(--accent);text-decoration:none">amiagentai.com</a></td><td style="padding:6px 12px">Real Estate Agent AI</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amibrainai.com" style="color:var(--accent);text-decoration:none">amibrainai.com</a></td><td style="padding:6px 12px">Study &amp; Learning Companion</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amiapiai.com" style="color:var(--accent);text-decoration:none">amiapiai.com</a></td><td style="padding:6px 12px">API Documentation &amp; Testing</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amioracleai.com" style="color:var(--accent);text-decoration:none">amioracleai.com</a></td><td style="padding:6px 12px">Business Strategy &amp; Forecast</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amipassai.com" style="color:var(--accent);text-decoration:none">amipassai.com</a></td><td style="padding:6px 12px">Password Security Companion</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amirobotai.com" style="color:var(--accent);text-decoration:none">amirobotai.com</a></td><td style="padding:6px 12px">Robotics &amp; Automation</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amiexilai.com" style="color:var(--accent);text-decoration:none">amiexilai.com</a></td><td style="padding:6px 12px">Diaspora &amp; Expatriate Companion</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://madamsai.com" style="color:var(--accent);text-decoration:none">madamsai.com</a></td><td style="padding:6px 12px">Women Entrepreneurs &amp; Career</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://openbarnai.com" style="color:var(--accent);text-decoration:none">openbarnai.com</a></td><td style="padding:6px 12px">Smart Farming &amp; Agriculture</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amipecetai.com" style="color:var(--accent);text-decoration:none">amipecetai.com</a></td><td style="padding:6px 12px">Truth Vector Engine SaaS</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amibellai.com" style="color:var(--accent);text-decoration:none">amibellai.com</a></td><td style="padding:6px 12px">Beauty Companion</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amitherai.com" style="color:var(--accent);text-decoration:none">amitherai.com</a></td><td style="padding:6px 12px">Wellness Companion</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amiwealthai.com" style="color:var(--accent);text-decoration:none">amiwealthai.com</a></td><td style="padding:6px 12px">Private Wealth Intelligence</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amistampai.com" style="color:var(--accent);text-decoration:none">amistampai.com</a></td><td style="padding:6px 12px">Digital Notarization (existence + meaning + intention)</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amigibberishai.com" style="color:var(--accent);text-decoration:none">amigibberishai.com</a></td><td style="padding:6px 12px">Human-AI Semantic Protocol (32 primitives)</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://kinderagi.com" style="color:var(--accent);text-decoration:none">kinderagi.com</a></td><td style="padding:6px 12px">Adaptive Education &mdash; anti-addiction, Apache-2.0</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+      <tr><td style="padding:6px 12px;font-family:var(--font-mono);color:var(--text)"><a href="https://amiluxai.com" style="color:var(--accent);text-decoration:none">amiluxai.com</a></td><td style="padding:6px 12px">11-Companion Ecosystem Landing</td><td style="padding:6px 12px;color:var(--accent2)">Live</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--text);margin:30px 0 12px;font-weight:400">Infrastructure &amp; Platforms</h3>
+  <ul class="doc-list">
+    <li class="doc-item"><div class="doc-icon" style="font-size:.55rem">BRIDG</div><div class="doc-info"><div class="doc-title"><a href="https://bridgrai.com">bridgrai.com</a></div><div class="doc-desc">Foundation site &mdash; Bridge Between Carbon and Silicon. S(M) = R.</div></div></li>
+    <li class="doc-item"><div class="doc-icon" style="font-size:.55rem">ANTET</div><div class="doc-info"><div class="doc-title"><a href="https://antetai.com">antetai.com</a></div><div class="doc-desc">BRIDGRAI ecosystem gateway. Central routing to all ami* companions.</div></div></li>
+    <li class="doc-item"><div class="doc-icon" style="font-size:.55rem">TRANS</div><div class="doc-info"><div class="doc-title"><a href="https://github.com/amidigiart/transgenerational">transgenerational</a></div><div class="doc-desc">Digital Heritage Vault &mdash; transgenerational IP transfer. Mars bandwidth: 2%. agikindergarten.com.</div></div></li>
+    <li class="doc-item"><div class="doc-icon" style="font-size:.55rem">CNSRT</div><div class="doc-info"><div class="doc-title"><a href="https://consortiumagialpha.site">consortiumagialpha.site</a></div><div class="doc-desc">Consortium AGI Alpha &mdash; Puntea Transgenerațională.</div></div></li>
+    <li class="doc-item"><div class="doc-icon" style="font-size:.55rem">1CENT</div><div class="doc-info"><div class="doc-title"><a href="https://github.com/amidigiart/1cent-wise">1cent-wise.com</a></div><div class="doc-desc">RanadeLookSRL &mdash; Magazin general Brăila (real business, real commerce).</div></div></li>
+  </ul>
+
+  <div style="background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent2);border-radius:4px;padding:20px 24px;margin:30px 0">
+    <p style="font-family:var(--font-display);font-size:.95rem;color:var(--text);line-height:1.8;margin:0"><strong>Statement of Independence.</strong> Every repository listed above was created by Mihai Roșca without grants, investors, institutional support, accelerator programmes, or external funding of any kind. No salary was drawn. No equity was sold. No favours were asked. The work was done on a Dell Latitude E6540 laptop and a Xiaomi Redmi Note 13 phone, from Spiru Haret (Brăila) and Timișoara, Romania, between 2022 and 2026. The 106 IP assets are timestamped on the Tezos blockchain as immutable proof that this work exists and belongs to its creator. Everything on this page is public, verifiable, and links to the source code. There is nothing hidden and nothing to hide.</p>
+  </div>
 </section>
 
 </div>
