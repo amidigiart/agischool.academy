@@ -17,7 +17,7 @@ Independent AI research ecosystem built by one person over 3.5 years with zero e
 - Central Hub: https://amiecosystems.com (22 products, 6 languages)
 
 ## Core Research
-- UKBE Core: Resonance engine (Kuramoto + Kalman + Adler). 102 tests. Apache-2.0.
+- UKBE Core: Resonance engine (Kuramoto + Kalman + Adler). 102 tests. AGPL-3.0/Commercial.
 - TVE Core: 6-pillar manipulation detection. 32 tests.
 - BRIDGRAI A2A: 8-agent platform with trust layer. 18 tests.
 - Amidor Engine: Dual-model anti-confabulation. 81 tests. AGPL-3.0.
