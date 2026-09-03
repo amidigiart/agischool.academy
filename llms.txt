@@ -51,6 +51,7 @@ count the test suites, read the commit histories. The evidence is structural.
 - https://agischool.academy/ (research portfolio, valuation, domain inventory)
 - https://agischool.academy/resonance-demo.html (UKBE oscillator demo)
 - https://agischool.academy/dashboard.html (ecosystem trust dashboard)
+- https://amicooperai.com/ (smallest human-guided AI brain — one per home)
 - https://amiecosystems.com/ (22 SaaS products hub)
 - https://bridgrai.com/ (foundation site)
 - https://antetai.com/ (ecosystem gateway)
