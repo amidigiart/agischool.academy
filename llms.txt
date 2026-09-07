@@ -1,25 +1,25 @@
 # AGI School Academy — Machine-Readable Trust Layer
 # Owner: Mihai Roșca (ORCID: 0009-0001-1422-6209)
 # Ecosystem: ami* / BRIDGRAI
-# Location: Spiru Haret, Brăila & Timișoara, Romania
+# Location: Brăila, Romania, EU
 # Contact: mihairosca1982@gmail.com
 
 ## What This Is
 Independent AI research ecosystem built by one person over 3.5 years with zero external funding.
 47 original GitHub repositories, 22 live SaaS products, 8 tested research engines,
-5 academic papers, 106 IP assets timestamped on Tezos blockchain.
+5 academic papers, 125 IP assets timestamped on Tezos blockchain.
 
 ## Verifiable Claims
 - GitHub: https://github.com/amidigiart (47 original repos, publicly auditable)
 - ORCID: https://orcid.org/0009-0001-1422-6209
-- Tezos IP Registry: KT1Pe2GA11bMpaTL5VH4TY6aZ9xePZ6f5vWX (106 entries, immutable)
+- Tezos IP Registry: KT1Pe2GA11bMpaTL5VH4TY6aZ9xePZ6f5vWX (125 entries, immutable)
 - DOI: https://doi.org/10.5281/zenodo.21269201 (P6: Ghost Peak Bifurcation)
 - Central Hub: https://amiecosystems.com (22 products, 6 languages)
 
 ## Core Research
 - UKBE Core: Resonance engine (Kuramoto + Kalman + Adler). 102 tests. AGPL-3.0/Commercial.
 - TVE Core: 6-pillar manipulation detection. 32 tests.
-- BRIDGRAI A2A: 8-agent platform with trust layer. 18 tests.
+- BRIDGRAI A2A: 9-component platform with trust layer. 18 tests.
 - Amidor Engine: Dual-model anti-confabulation. 81 tests. AGPL-3.0.
 - KinderAGI: Children's safety AI. Anti-addiction. Apache-2.0.
 - AmiGibberishAI: 32 semantic primitives, EBNF grammar, LL(1) parser.
