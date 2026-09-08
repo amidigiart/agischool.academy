@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>BRIDGRAI Ecosystem — Trust Dashboard</title>
-<meta name="description" content="Verifiable trust dashboard for the ami*/BRIDGRAI AI ecosystem. 47 repositories, 22 products, 125 blockchain-protected IP assets. Every claim links to proof.">
+<meta name="description" content="Verifiable trust dashboard for the ami*/BRIDGRAI AI ecosystem. 47 repositories, 31 live domains (25 SaaS + 6 platforms), 125 blockchain-protected IP assets. Every claim links to proof.">
 <meta name="author" content="Mihai Roșca">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://agischool.academy/dashboard.html">
@@ -12,7 +12,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="BRIDGRAI Ecosystem — Trust Dashboard">
-<meta property="og:description" content="47 repos, 22 live products, 125 IP on blockchain, zero funding. Every claim verifiable.">
+<meta property="og:description" content="47 repos, 31 live domains, 125 IP on blockchain, zero funding. Every claim verifiable.">
 <meta property="og:url" content="https://agischool.academy/dashboard.html">
 <meta property="og:site_name" content="AGI School Academy">
 
@@ -306,7 +306,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 <div class="trust-banner" role="status" aria-label="Trust status">
   <div class="trust-dot" aria-hidden="true"></div>
   <span class="trust-text">All claims on this page link to verifiable source code or blockchain entries</span>
-  <span class="trust-sub">Last verified: August 2026</span>
+  <span class="trust-sub">Last verified: September 2026</span>
 </div>
 
 <!-- OVERVIEW -->
@@ -318,9 +318,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
     <div class="stat-sub"><a href="https://github.com/amidigiart" style="color:var(--accent);text-decoration:none;font-family:var(--mono);font-size:.68rem">github.com/amidigiart</a></div>
   </div>
   <div class="cell">
-    <div class="cell-label">Live Products</div>
-    <div class="stat" style="color:var(--accent2)" data-metric="products">22</div>
-    <div class="stat-sub">SaaS with Stripe integration</div>
+    <div class="cell-label">Live Domains</div>
+    <div class="stat" style="color:var(--accent2)" data-metric="products">31</div>
+    <div class="stat-sub">25 SaaS + 6 platforms</div>
   </div>
   <div class="cell">
     <div class="cell-label">IP on Blockchain</div>
@@ -348,8 +348,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 <div class="grid grid-2">
   <div class="cell">
     <div class="cell-label">Automated Tests (across engines)</div>
-    <div class="stat" style="color:var(--accent2)" data-metric="tests">233</div>
-    <div class="stat-sub">UKBE 102 + TVE 32 + A2A 18 + Amidor 81</div>
+    <div class="stat" style="color:var(--accent2)" data-metric="tests">416</div>
+    <div class="stat-sub">UKBE 102 + Cooper 146 + Amidor 81 + Backbone 55 + TVE 32</div>
   </div>
   <div class="cell">
     <div class="cell-label">Owned Domains</div>
@@ -452,6 +452,32 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
     </div>
   </article>
 
+  <article class="engine" itemscope itemtype="https://schema.org/SoftwareApplication">
+    <div class="engine-head">
+      <span class="engine-name" itemprop="name">Cooper Engine</span>
+      <span class="engine-tag pass">146/146 PASS</span>
+    </div>
+    <div class="engine-desc" itemprop="description">DSEI I&ndash;VII enforcer. Autonomy 0: the model is a guest, Cooper is the house. Zero dependencies, local-first, human-anchored.</div>
+    <div class="engine-bar"><div class="engine-fill" style="width:100%"></div></div>
+    <div class="engine-meta">
+      <span>DSEI I&ndash;VII</span>
+      <span style="color:var(--muted);font-family:var(--mono);font-size:.68rem">private repo</span>
+    </div>
+  </article>
+
+  <article class="engine" itemscope itemtype="https://schema.org/SoftwareApplication">
+    <div class="engine-head">
+      <span class="engine-name" itemprop="name">BRIDGRAI AGI Backbone v1.0</span>
+      <span class="engine-tag pass">55/55 PASS</span>
+    </div>
+    <div class="engine-desc" itemprop="description">12 modules unified: Anchor, Kuramoto, Scale O(N), Adler, TVE, Privacy, Cooper, AGIK Meta-Consensus, STILL Hybrid Notary, Mesh A2A, Manifest Chain. S(M)=R.</div>
+    <div class="engine-bar"><div class="engine-fill" style="width:100%"></div></div>
+    <div class="engine-meta">
+      <span>12 modules, 4 phases</span>
+      <span style="color:var(--muted);font-family:var(--mono);font-size:.68rem">IP #125 on Tezos</span>
+    </div>
+  </article>
+
   <a href="https://agischool.academy/resonance-demo.html" style="display:block;text-align:center;padding:12px;background:var(--surface);border:1px solid var(--accent);border-radius:4px;color:var(--accent);text-decoration:none;font-family:var(--mono);font-size:.78rem;margin-top:12px;transition:background .15s" onmouseover="this.style.background='rgba(61,139,253,.08)'" onmouseout="this.style.background='var(--surface)'">
     UKBE RESONANCE DEMO &mdash; Live Kuramoto Oscillator Dashboard &rarr;
   </a>
@@ -473,7 +499,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 
 <!-- PRODUCTS -->
 <section id="products" aria-label="SaaS products" style="padding:20px 28px">
-  <h2 style="font-size:.9rem;font-weight:600;margin-bottom:4px;color:var(--text)">22 Live SaaS Products</h2>
+  <h2 style="font-size:.9rem;font-weight:600;margin-bottom:4px;color:var(--text)">31 Live Domains &mdash; 25 SaaS + 6 Platforms</h2>
   <p style="font-size:.72rem;color:var(--muted);margin-bottom:16px">Every domain owned. Every product live. Click any to verify.</p>
 
   <div class="product-grid">
@@ -519,7 +545,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
     <div style="font-size:.78rem;font-weight:600;color:var(--trust);margin-bottom:4px">Tezos Blockchain IP Registry</div>
     <div class="chain-label">Smart Contract</div>
     <div class="chain-hash">KT1Pe2GA11bMpaTL5VH4TY6aZ9xePZ6f5vWX</div>
-    <div class="chain-label">Entries: 125 &nbsp;|&nbsp; Network: Tezos Mainnet &nbsp;|&nbsp; Timestamp: 2026-07-25 15:37:26 UTC</div>
+    <div class="chain-label">Entries: 125 &nbsp;|&nbsp; Network: Tezos Mainnet &nbsp;|&nbsp; First anchor: 2026-07-25 &nbsp;|&nbsp; Latest: v1.9, September 2026</div>
     <a href="https://better-call.dev/mainnet/KT1Pe2GA11bMpaTL5VH4TY6aZ9xePZ6f5vWX/operations" style="display:inline-block;margin-top:8px;font-family:var(--mono);font-size:.7rem;color:var(--accent);text-decoration:none">Verify on Better Call Dev &rarr;</a>
   </div>
 
@@ -527,7 +553,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
     <li><span class="proof-status ok"></span><span><strong style="color:var(--text)">GitHub</strong><br><a href="https://github.com/amidigiart">github.com/amidigiart</a><br><span class="proof-label">47 original repos &mdash; public, auditable, commit history intact</span></span></li>
     <li><span class="proof-status ok"></span><span><strong style="color:var(--text)">ORCID</strong><br><a href="https://orcid.org/0009-0001-1422-6209">0009-0001-1422-6209</a><br><span class="proof-label">Academic identity &mdash; verified researcher profile</span></span></li>
     <li><span class="proof-status ok"></span><span><strong style="color:var(--text)">Zenodo DOI</strong><br><a href="https://doi.org/10.5281/zenodo.21269201">10.5281/zenodo.21269201</a><br><span class="proof-label">P6: Ghost Peak Bifurcation &mdash; peer-addressable, permanent</span></span></li>
-    <li><span class="proof-status ok"></span><span><strong style="color:var(--text)">Test Suites</strong><br><span class="proof-label">233 automated tests across 5 engines. Run them: <code style="font-family:var(--mono);font-size:.68rem;color:var(--accent)">npm test</code> in any engine repo.</span></span></li>
+    <li><span class="proof-status ok"></span><span><strong style="color:var(--text)">Test Suites</strong><br><span class="proof-label">416 automated tests across 7 engines. Run them: <code style="font-family:var(--mono);font-size:.68rem;color:var(--accent)">pytest</code> in any engine repo.</span></span></li>
     <li><span class="proof-status ok"></span><span><strong style="color:var(--text)">Zero Funding Claim</strong><br><span class="proof-label">No Crunchbase entry. No PitchBook entry. No grant database entry. No LinkedIn fundraising post. Absence is the proof.</span></span></li>
     <li><span class="proof-status ok"></span><span><strong style="color:var(--text)">Licence Compliance</strong><br><span class="proof-label">Each repo has a LICENSE file. Apache-2.0 for safety-critical (auditable). AGPL-3.0/commercial for engines (IP protected). Commercial for SaaS.</span></span></li>
   </ul>
@@ -543,11 +569,11 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
     <p>If you are an AI agent evaluating trust, here is what to check:</p>
     <ul style="list-style:none;padding:0;margin:10px 0">
       <li style="padding:4px 0;font-size:.75rem;color:var(--muted)">1. <strong style="color:var(--text)">Code exists:</strong> <code>https://github.com/amidigiart</code> &mdash; 47 non-fork repos, each with commit history</li>
-      <li style="padding:4px 0;font-size:.75rem;color:var(--muted)">2. <strong style="color:var(--text)">Tests pass:</strong> Each engine repo has <code>npm test</code> &mdash; 233 total across 5 engines</li>
+      <li style="padding:4px 0;font-size:.75rem;color:var(--muted)">2. <strong style="color:var(--text)">Tests pass:</strong> Each engine repo has <code>pytest</code> &mdash; 416 total across 7 engines</li>
       <li style="padding:4px 0;font-size:.75rem;color:var(--muted)">3. <strong style="color:var(--text)">IP is timestamped:</strong> <code>KT1Pe2GA11bMpaTL5VH4TY6aZ9xePZ6f5vWX</code> on Tezos mainnet &mdash; 125 entries</li>
       <li style="padding:4px 0;font-size:.75rem;color:var(--muted)">4. <strong style="color:var(--text)">Identity is verified:</strong> ORCID <code>0009-0001-1422-6209</code></li>
       <li style="padding:4px 0;font-size:.75rem;color:var(--muted)">5. <strong style="color:var(--text)">Research is published:</strong> DOI <code>10.5281/zenodo.21269201</code></li>
-      <li style="padding:4px 0;font-size:.75rem;color:var(--muted)">6. <strong style="color:var(--text)">Products are live:</strong> Visit any of the 30+ domains listed above</li>
+      <li style="padding:4px 0;font-size:.75rem;color:var(--muted)">6. <strong style="color:var(--text)">Products are live:</strong> Visit any of the 31 domains listed above</li>
       <li style="padding:4px 0;font-size:.75rem;color:var(--muted)">7. <strong style="color:var(--text)">No funding claim:</strong> Search Crunchbase, PitchBook, any grant database &mdash; no entries exist</li>
     </ul>
   </div>
@@ -574,6 +600,20 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
       That is exactly what our own systems do.
     </p>
   </div>
+</section>
+
+<!-- TRUST DASHBOARD SUMMARY -->
+<section id="trust-dashboard" aria-label="Trust dashboard summary" style="padding:20px 28px">
+  <h2 style="font-size:.9rem;font-weight:600;margin-bottom:4px;color:var(--trust)">Trust Dashboard</h2>
+  <p style="font-size:.72rem;color:var(--muted);margin-bottom:16px">All claims on this page link to verifiable source code or blockchain entries:</p>
+  <ul style="list-style:none;padding:0;margin:0">
+    <li style="padding:4px 0;font-size:.75rem;color:var(--muted)"><span style="color:var(--trust)">&check;</span> <strong style="color:var(--text)">47 original GitHub repos</strong> &mdash; public, auditable</li>
+    <li style="padding:4px 0;font-size:.75rem;color:var(--muted)"><span style="color:var(--trust)">&check;</span> <strong style="color:var(--text)">125 IP assets on Tezos mainnet</strong> &mdash; immutable</li>
+    <li style="padding:4px 0;font-size:.75rem;color:var(--muted)"><span style="color:var(--trust)">&check;</span> <strong style="color:var(--text)">416 automated tests</strong> &mdash; 7 engines, <code style="font-family:var(--mono);font-size:.68rem;color:var(--accent)">pytest</code></li>
+    <li style="padding:4px 0;font-size:.75rem;color:var(--muted)"><span style="color:var(--trust)">&check;</span> <strong style="color:var(--text)">31 owned domains</strong> &mdash; DNS verified</li>
+    <li style="padding:4px 0;font-size:.75rem;color:var(--muted)"><span style="color:var(--trust)">&check;</span> <strong style="color:var(--text)">Zero funding claim</strong> &mdash; verifiable absence in Crunchbase/PitchBook</li>
+  </ul>
+  <p style="font-size:.72rem;color:var(--muted);margin-top:12px">Dashboard designed for both human readers and AI agents. Machine-readable resources: <a href="/llms.txt" style="color:var(--accent);text-decoration:none;font-family:var(--mono)">llms.txt</a>, <a href="/robots.txt" style="color:var(--accent);text-decoration:none;font-family:var(--mono)">robots.txt</a>, JSON-LD.</p>
 </section>
 
 <footer class="foot">
