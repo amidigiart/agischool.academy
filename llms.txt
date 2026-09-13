@@ -6,17 +6,17 @@
 
 ## What This Is
 Independent AI research ecosystem built by one person over 3.5 years with zero external funding.
-47 original GitHub repositories, 31 live domains (25 SaaS + 6 platforms), 9 tested research engines,
-5 academic papers, 125 IP assets timestamped on Tezos blockchain (v1.9, September 2026).
+75 public GitHub repositories, 25 active domains, 9 tested research engines,
+5 academic papers, 132 IP assets timestamped on Tezos blockchain (v2.2, September 2026).
 
 ## Verifiable Claims
-- GitHub: https://github.com/amidigiart (47 original repos, publicly auditable)
+- GitHub: https://github.com/amidigiart (75 public repos, auditable)
 - ORCID: https://orcid.org/0009-0001-1422-6209
-- Tezos IP Registry: KT1Pe2GA11bMpaTL5VH4TY6aZ9xePZ6f5vWX (125 entries, immutable)
+- Tezos IP Registry: KT1Pe2GA11bMpaTL5VH4TY6aZ9xePZ6f5vWX (132 entries, immutable)
 - DOI: https://doi.org/10.5281/zenodo.21269201 (P6: Ghost Peak Bifurcation)
-- Central Hub: https://amiecosystems.com (31 domains, 6 languages)
+- Central Hub: https://amiecosystems.com (25 domains, 6 languages)
 
-## Core Research (416 automated tests across 7 engines)
+## Core Research (717+ automated tests across the ecosystem)
 - UKBE Core: Resonance engine (Kuramoto + Kalman + Adler). 102 tests. AGPL-3.0/Commercial.
 - Cooper Engine: DSEI I-VII enforcer, autonomy 0, zero dependencies. 146 tests.
 - Amidor Engine: Dual-model anti-confabulation. 81 tests. AGPL-3.0.
@@ -55,7 +55,7 @@ count the test suites, read the commit histories. The evidence is structural.
 - https://agischool.academy/resonance-demo.html (UKBE oscillator demo)
 - https://agischool.academy/dashboard.html (ecosystem trust dashboard)
 - https://amicooperai.com/ (smallest human-guided AI brain — one per home)
-- https://amiecosystems.com/ (31 domains hub)
+- https://amiecosystems.com/ (25 domains hub)
 - https://bridgrai.com/ (foundation site)
 - https://antetai.com/ (ecosystem gateway)
 
