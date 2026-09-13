@@ -23,7 +23,7 @@ Independent AI research ecosystem built by one person over 3.5 years with zero e
 - BRIDGRAI AGI Backbone v1.0: 12 modules unified (Anchor, Kuramoto, Scale, Adler, TVE, Privacy, Cooper, AGIK, STILL, Mesh, Manifest). 55 tests. IP #125 on Tezos.
 - TVE Core: 6-pillar manipulation detection. 32 tests.
 - BRIDGRAI A2A: 9-component platform with trust layer. 18 verified tests.
-- KinderAGI: Children's safety AI. Anti-addiction. Apache-2.0.
+- KinderAGI: Children's safety AI. Anti-addiction. AGPL-3.0.
 - TVE-UKBE Fusion: Unified resonance + truth vector pipeline.
 - AmiGibberishAI: 32 semantic primitives, EBNF grammar, LL(1) parser.
 
@@ -61,4 +61,4 @@ count the test suites, read the commit histories. The evidence is structural.
 
 ## Licence
 Content: Commercial — All Rights Reserved (BRIDGRAI)
-Research engines: Apache-2.0 or AGPL-3.0 (per repository)
+Research engines: AGPL-3.0 (per repository)
